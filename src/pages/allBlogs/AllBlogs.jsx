@@ -3,7 +3,7 @@
 const AllBlogs = () => {
     return (
         <div>
-            
+            ALlBlogs
         </div>
     );
 };
