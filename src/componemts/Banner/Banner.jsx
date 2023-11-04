@@ -11,7 +11,7 @@ const Banner = () => {
            
           </div>
            <div className='z-[1]  md:mt-8 mt-6 lg:mt-14'>
-           <button  className='bg-[#11192BA8] text-white  p-4'><Link>Go All BLogs</Link></button>
+           <button  className='bg-[#11192BA8] text-white  p-4'><Link to='allBlog'>Go All BLogs</Link></button>
            </div>
     </div>
     </div>
