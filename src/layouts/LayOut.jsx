@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { Link, NavLink } from 'react-router-dom';
+import {  NavLink } from 'react-router-dom';
 import AuthButton from './AuthButton';
 
 const LayOut = ({children}) => {

@@ -9,7 +9,7 @@ import { useEffect } from "react";
 
 
 const googleProvider=new GoogleAuthProvider()
-const AuthContext=createContext(null)
+export const AuthContext=createContext(null)
 
 const AuthProvider = ({children}) => {
      const [user,setUser]= useState(null)
@@ -38,6 +38,7 @@ const AuthProvider = ({children}) => {
     useEffect(()=>{
         const unSubscriber= onAuthStateChanged(auth,currentUser=>{
             setUser(currentUser)
+            console.log(currentUser)
             setLoader(false)
       })
       return()=>{

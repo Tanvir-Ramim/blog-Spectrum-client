@@ -1,0 +1,45 @@
+import { Link } from "react-router-dom";
+
+
+const LogIn = () => {
+    return (
+        <div>
+        <div className="hero min-h-screen bg-base-200">
+          <div className="hero-content flex-col lg:flex-row-reverse">
+            <div className="text-center lg:text-left">
+              <h1 className="text-5xl font-bold text-[#11192BA8]">Login now!</h1>
+            </div>
+            <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+              <form  className="card-body bg-[#11192BA8]">
+                <div className="form-control">
+                  <label className="label">
+                    <span className="label-text text-white text-lg">Email</span>
+                  </label>
+                  <input name="email" type="email" placeholder="email" className="input input-bordered" required />
+                </div>
+                <div className="form-control">
+                  <label className="label">
+                    <span className="label-text text-white text-lg">Password</span>
+                  </label>
+                  <input name="password" type="password" placeholder="password" className="input input-bordered" required />
+                </div>
+                <div className="form-control mt-6">
+                  <button className="btn btn-neutral">Login</button>
+                </div>
+                <div className="text-white text-lg"><h1>Do not have an account  <Link to='/register' className="text-red-500 underline font-bold">Sign Up</Link></h1></div>
+                {/* <div>
+                  {error && <p className="text-red-500">{error}</p>}
+                </div> */}
+                <h1 className="text-center text-xl text-white font-bold">Or</h1>
+              </form>
+              <div className="flex  justify-center mb-4">
+                <button className="border border-[#11192BA8] font-semibold shadow shadow-[#11192BA8] p-2">Google SignIn</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+};
+
+export default LogIn;
