@@ -6,7 +6,7 @@ import auth from "../authentication/firebase.config";
 
 const AuthButton = () => {
      const {user,userLogOut}=useContext(AuthContext)
-     console.log(user)
+    
      const handleLogOut=()=>{
         userLogOut(auth)
      }

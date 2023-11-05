@@ -7,6 +7,7 @@ import FeaturedBlogs from "../pages/featuredBlogs/FeaturedBlogs";
 import Wishlist from "../pages/wishlist/Wishlist";
 import Register from "../authentication/Register";
 import LogIn from "../authentication/LogIn";
+import Details from "../pages/details/Details";
 
 
 const Routers = createBrowserRouter([
@@ -41,6 +42,10 @@ const Routers = createBrowserRouter([
         {
           path:'logIn',
           element: <LogIn></LogIn>
+        },
+        {
+          path:'details/:id',
+          element:<Details></Details>
         }
       ]
     },
