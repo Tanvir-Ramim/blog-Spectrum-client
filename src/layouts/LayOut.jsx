@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
+import AuthButton from './AuthButton';
 
 const LayOut = ({children}) => {
      
@@ -26,13 +27,17 @@ const LayOut = ({children}) => {
   <input id="my-drawer-3" type="checkbox" className="drawer-toggle" /> 
   <div className="drawer-content flex flex-col">
     {/* Navbar */}
-    <div className="w-full navbar py-10">
-      <div className="flex-none lg:hidden">
+    <div className="w-full navbar py-10 md:flex-row flex flex-col ">
+     <div className='flex-1'>
+     <div className="flex-none lg:hidden">
         <label htmlFor="my-drawer-3" aria-label="open sidebar" className="btn btn-square btn-ghost">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="inline-block w-6 h-6 stroke-current"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
         </label>
       </div> 
-      <div className="flex-1 px-2 mx-2  text-3xl font-semibold ">Blog<span className='ml-2'><img className='w-10 ' src="https://i.ibb.co/YyHwgt7/logo.png" alt="" /></span> <span className=' text-green-600 p-1'> Spectrum</span></div>
+      <div className=" flex  px-2 mx-2  text-3xl font-semibold ">Blog<span className='ml-2'><img className='w-10 ' src="https://i.ibb.co/YyHwgt7/logo.png" alt="" /></span> <span className=' text-green-600 p-1'> Spectrum</span></div>
+      
+     </div>
+      <div className='flex-1 justify-end '>
       <div className="flex-none hidden lg:block">
         <ul className="menu menu-horizontal">
           {/* Navbar menu content here */}
@@ -42,6 +47,8 @@ const LayOut = ({children}) => {
           }
           </div>
         </ul>
+      </div>
+        <AuthButton></AuthButton>
       </div>
     </div>
     {/* Page content here */}
