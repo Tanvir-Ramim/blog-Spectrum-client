@@ -2,6 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 
 import useAxiosNormal from "../../hooks/useAxiosNormal";
 import BlogCards from "./BlogCards";
+import Skeleton from "react-loading-skeleton";
 
 
 const RecentAdd = () => {
@@ -19,7 +20,7 @@ const RecentAdd = () => {
           queryFn: reactAdd
     })
        if(isLoading){
-          return <h1>sdfds</h1>
+          return <Skeleton count={5} />
        }
        if(isError){
         return console.log(error)

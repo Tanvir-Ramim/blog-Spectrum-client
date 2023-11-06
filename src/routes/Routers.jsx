@@ -7,13 +7,15 @@ import FeaturedBlogs from "../pages/featuredBlogs/FeaturedBlogs";
 import Wishlist from "../pages/wishlist/Wishlist";
 import Register from "../authentication/Register";
 import LogIn from "../authentication/LogIn";
-import Details from "../pages/details/Details";
+import MainDetails from "../pages/details/MainDetails";
+import ErrorPage from "../componemts/ErrorPage";
 
 
 const Routers = createBrowserRouter([
     {
       path: "/",
       element: <MainLayOut></MainLayOut>,
+      errorElement:<ErrorPage></ErrorPage>,
       children:[
         {
               index: true,
@@ -45,7 +47,7 @@ const Routers = createBrowserRouter([
         },
         {
           path:'details/:id',
-          element:<Details></Details>
+          element:<MainDetails></MainDetails>
         }
       ]
     },
