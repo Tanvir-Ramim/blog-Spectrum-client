@@ -10,6 +10,7 @@ import LogIn from "../authentication/LogIn";
 import MainDetails from "../pages/details/MainDetails";
 import ErrorPage from "../componemts/ErrorPage";
 import UpdateBlog from "../pages/UpdateBlog";
+import PrivateRoute from "./PrivateRoute";
 
 
 const Routers = createBrowserRouter([
@@ -36,7 +37,7 @@ const Routers = createBrowserRouter([
         },
         {
              path: 'addBlog',
-             element:<AddBlog></AddBlog>
+             element:<PrivateRoute><AddBlog></AddBlog></PrivateRoute>
         },
         {
           path:'register',
@@ -48,7 +49,7 @@ const Routers = createBrowserRouter([
         },
         {
           path:'details/:id',
-          element:<MainDetails></MainDetails>
+          element:<PrivateRoute><MainDetails></MainDetails></PrivateRoute>
         },
         {
            path:'update/:id',

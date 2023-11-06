@@ -3,13 +3,17 @@ import { Link } from 'react-router-dom';
 import { MdBookmarkAdd } from 'react-icons/md';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
 import 'react-photo-view/dist/react-photo-view.css';
-const BlogCards = ({ blogInfo }) => {
-    
-    const { _id, title, category, url, shortDescription, UserPhoto, currentTime } = blogInfo || {}
+const AllBlogInfo = ({allBLogsInfo}) => {
+
+    const { _id, title, category, url, shortDescription, UserPhoto, currentTime } = allBLogsInfo || {}
+
+
+
     return (
         <div className='mt-5 max-w-[400px] h-[510px] border bg-gray-100 '>
-            <div className=''>
-                {/* <img src={url} alt="" /> */}
+            
+            <div>
+              
               <PhotoProvider >
                 <PhotoView src={url}>
                  <img src={url} alt="" />
@@ -29,8 +33,7 @@ const BlogCards = ({ blogInfo }) => {
         </div>
     );
 };
-
-BlogCards.propTypes = {
-    blogInfo: PropTypes.object.isRequired
+AllBlogInfo.propTypes = {
+    allBLogsInfo: PropTypes.object.isRequired
 }
-export default BlogCards;
+export default AllBlogInfo;

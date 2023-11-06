@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import useAxiosNormal from "../hooks/useAxiosNormal";
 import { useQuery } from "@tanstack/react-query";
 import Skeleton from "react-loading-skeleton";
+import toast from "react-hot-toast";
 
 
 const UpdateBlog =  () => {
@@ -40,15 +41,12 @@ const UpdateBlog =  () => {
         .then(res=>{
             if(res.data.matchedCount){
                 refetch()
+                toast.success('SuccessFully Updated')
             }
         })
         
       }
      
-
-
-
-
     return (
         <div className="max-w-[1000px] m-auto">
               <div className="bg-[#11192BA8] py-20  p-1 md:p-24  max-w-[1800px] m-auto rounded-xl">

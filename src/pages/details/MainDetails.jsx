@@ -12,16 +12,17 @@ const MainDetails = () => {
     const {user}=useContext(AuthContext)
     const {id}=useParams()
     const axiosNormal=useAxiosNormal()
-   
+    
     const details=async()=>{
+       
           const res= await axiosNormal.get(`/details/${id}`)
-          if(res.data?.email===user?.email){
+          if( res?.data?.email===user?.email){
             setIsExits(true)
          } 
           return res
     }
 
-    const {data:blogDetails,isLoading,isError}=useQuery({
+    const {data:blogDetails,isLoading,isError,refetch}=useQuery({
          queryKey:['details',id],
          queryFn: details 
     }) 
