@@ -1,15 +1,20 @@
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { MdBookmarkAdd } from 'react-icons/md';
-
+import { PhotoProvider, PhotoView } from 'react-photo-view';
+import 'react-photo-view/dist/react-photo-view.css';
 const BlogCards = ({ blogInfo }) => {
     
     const { _id, title, category, url, shortDescription, UserPhoto, currentTime } = blogInfo || {}
     return (
         <div className='mt-5 max-w-[400px] h-[510px] border bg-gray-100 '>
             <div className=''>
-                <img src={url} alt="" />
-              
+                {/* <img src={url} alt="" /> */}
+              <PhotoProvider >
+                <PhotoView src={url}>
+                 <img src={url} alt="" />
+                </PhotoView>
+              </PhotoProvider>
                 <div className='px-2'>
                     <h3 className='mt-4 text-lg font-semibold'>{title}</h3>
                     <p className='mt-2 text-lg font-normal'>{shortDescription.slice(0, 120)}....<span className='font-bold text-base'><Link to={`details/${_id}`}>More Details</Link></span></p>
