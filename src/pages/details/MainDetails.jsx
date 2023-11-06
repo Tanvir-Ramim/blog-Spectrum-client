@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import useAxiosNormal from "../../hooks/useAxiosNormal";
 import { useQuery } from "@tanstack/react-query";
 import { useContext, useState } from "react";
@@ -22,7 +22,7 @@ const MainDetails = () => {
     }
 
     const {data:blogDetails,isLoading,isError}=useQuery({
-         queryKey:['details'],
+         queryKey:['details',id],
          queryFn: details 
     }) 
      
@@ -30,7 +30,7 @@ const MainDetails = () => {
         return <ErrorPage></ErrorPage>
     }
     if(isLoading){
-        return <Skeleton count={5} />
+        return <Skeleton count={10} />
   }
    if(blogDetails.data.error){
      return <ErrorPage></ErrorPage>
@@ -38,7 +38,7 @@ const MainDetails = () => {
 
         
        
-    const { _id, title, category, url, shortDescription, currentTime,longDescription}=blogDetails.data
+    const { _id, title, category, url, shortDescription, currentTime,longDescription}=blogDetails.data ||{}
 
     return (
         <div className="max-w-[1600px] mx-auto">
@@ -60,12 +60,15 @@ const MainDetails = () => {
                      <p className="text">{longDescription.slice(0,750)}</p>
                      </div>
                      <div>
-                        <div className="mt-5">
+                        <div className="mt-5 w-11/12">
                         <h1 className="text-lg font-semibold mb-2">Comment Here:</h1>
                         {
-                            isExits ?<h1 className="text-2xl text-red-700">You can not comment Here</h1> :  <div>
-                            <input className="w-4/5 h-20 border  border-r-0  border-black" type="text" />
-                            <button className="bg-[#11192BA8] text-white h-[82px]   p-3  ">Submit</button>
+                            isExits ? <div>
+                                <h1 className="text-2xl text-red-700">You can not comment Here</h1>
+                              <button className="rounded-lg text-blue-400  p-2 mt-4 border "><Link to={`/update/${_id}`}>Update Blog</Link> </button>
+                            </div> :  <div className="flex">
+                            <input className="w-4/5 md:h-20 h-12 border  border-r-0  border-black" type="text" />
+                            <button className="bg-[#11192BA8] text-white md:h-[80px] p-3  ">Submit</button>
                             </div>
                         }
                         </div>

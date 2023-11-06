@@ -9,6 +9,7 @@ import Register from "../authentication/Register";
 import LogIn from "../authentication/LogIn";
 import MainDetails from "../pages/details/MainDetails";
 import ErrorPage from "../componemts/ErrorPage";
+import UpdateBlog from "../pages/UpdateBlog";
 
 
 const Routers = createBrowserRouter([
@@ -48,6 +49,10 @@ const Routers = createBrowserRouter([
         {
           path:'details/:id',
           element:<MainDetails></MainDetails>
+        },
+        {
+           path:'update/:id',
+           element:<UpdateBlog></UpdateBlog>
         }
       ]
     },

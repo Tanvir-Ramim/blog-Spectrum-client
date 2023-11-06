@@ -24,7 +24,7 @@ const AddBlog = () => {
           axios.post('http://localhost:5000/addBlog',postInfo)
           .then(res=>{
                if(res.data.acknowledged){
-                 toast.success('Successfully Add')
+                 toast.success('Successfully Post')
                  form.reset()
                }
           
@@ -60,8 +60,6 @@ const AddBlog = () => {
                 </select>
                 </div>
             </div>
-
-
             <div className="md:flex md:mb-8">
                
                 <div className="form-control md:w-1/2 ">
@@ -81,7 +79,6 @@ const AddBlog = () => {
                     </label>
                 </div>
             </div>
-            
             <div className=" mb-8">
                 <div className="form-control ">
                     <label className="label">
@@ -91,13 +88,10 @@ const AddBlog = () => {
                         <textarea className="w-full text-lg" name="longDescription" id="" cols="" rows="7"></textarea>
                     </label>
                 </div>
-               
             </div>
-            <input type="submit" value="Add Product" className="btn btn-neutral w-full " />
+            <input type="submit" value="Post Blog" className="btn btn-neutral w-full " />
         </form>
-
     </div>
-
     );
 };
 
