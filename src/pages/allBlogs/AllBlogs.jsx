@@ -59,10 +59,10 @@ const AllBlogs = () => {
             <h1 className="text-3xl text-center font-semibold">All BLog Collection</h1>
         <hr className="mt-2"/>
             </div>
-            <div className="flex  mt-4">
-                <div className="flex-1">
+            <div className="flex md:flex-row flex-col  mt-4">
+                <div className="flex-1 md:mb-0 mb-4 ">
                      <h1 className="text-xl font-semibold mb-1">Filter By:</h1>
-                     <select onChange={handleFilter}  ref={categoryRef} name="category" className="select text-lg select-bordered join-item w-[225px] h-10 ">
+                     <select onChange={handleFilter}  ref={categoryRef} name="category" className="select text-lg select-bordered join-item w-[400px] md:w-[225px] h-10 ">
                         <option  className="hidden"></option>
                     <option >Travel Adventures</option>
                     <option >Health and Wellness</option>
@@ -72,9 +72,9 @@ const AllBlogs = () => {
                 </div>
                 <div className="flex-1 flex justify-end">
                      <div>
-                     <h1 className="text-xl font-semibold text-right mb-1">Search Here</h1>
+                     <h1 className="text-xl font-semibold md:text-right mb-1">Search Here</h1>
                     <div className="flex">
-                    <input placeholder="search by title"  ref={searchRef} className="border border-r-0 w-5/6 h-12 border-gray-400 " type="text" />
+                    <input placeholder="search by title"  ref={searchRef} className="border rounded-l-md border-r-0 w-[350px] md:w-5/6 h-12 border-gray-400 " type="text" />
                      <button onClick={handleSearch} className="bg-slate-600 text-white rounded-r-md p-2">Search</button>
                     </div>
                      </div>

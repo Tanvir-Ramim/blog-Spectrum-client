@@ -16,8 +16,9 @@ const AddBlog = () => {
           const longDescription=form.longDescription.value 
           const email=user.email
           const UserPhoto=user.photoURL
+          const userName=user.displayName
           const postInfo={
-            title,category,url,longDescription,shortDescription,email,UserPhoto
+            title,category,url,longDescription,shortDescription,email,UserPhoto,userName
           }
           
       
