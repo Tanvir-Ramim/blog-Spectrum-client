@@ -51,7 +51,6 @@ const AuthProvider = ({children}) => {
             if(currentUser){
                axiosNormal.post('/jwt',loggedUser,{withCredentials:true})
                .then(res=>{
-                console.log(res.data)
                })
             }
             else{

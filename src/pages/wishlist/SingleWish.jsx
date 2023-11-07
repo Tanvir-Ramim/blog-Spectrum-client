@@ -35,9 +35,6 @@ const SingleWish = ({wish,refetch}) => {
               refetch()
                  }
               })
-                   
-
-           
             }
           });
       }
