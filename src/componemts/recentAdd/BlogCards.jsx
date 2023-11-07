@@ -17,7 +17,7 @@ const BlogCards = ({ blogInfo }) => {
               </PhotoProvider>
                 <div className='px-2'>
                     <h3 className='mt-4 text-lg font-semibold'>{title}</h3>
-                    <p className='mt-2 text-lg font-normal'>{shortDescription.slice(0, 120)}....<span className='font-bold text-base'><Link to={`/details/${_id}`}>More Details</Link></span></p>
+                    <p className='mt-2 text-lg font-normal'>{shortDescription?.slice(0, 120)}....<span className='font-bold text-base'><Link to={`/details/${_id}`}>More Details</Link></span></p>
                     <h4 className='mt-2 text-lg font-normal'><span className='font-semibold'>Category</span> : {category}</h4>
                 </div>
             </div>

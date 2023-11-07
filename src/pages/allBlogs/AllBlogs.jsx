@@ -3,7 +3,7 @@ import useAxiosNormal from "../../hooks/useAxiosNormal";
 import { useQuery } from "@tanstack/react-query";
 import Skeleton from "react-loading-skeleton";
 import AllBlogInfo from "./AllBlogInfo";
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import toast from "react-hot-toast";
 
 
@@ -12,28 +12,26 @@ const AllBlogs = () => {
     const categoryRef=useRef(null)
     const searchRef=useRef(null)
     const [allBlogs,setAllBlogs]=useState([])
-
-
-    const allBlog = async(info)=>{
-      
+    const allBlog = async()=>{
     const res= await axiosNormal.get(`/allBlog`,)
     setAllBlogs(res)
-    
       return res
     }
-//
-  const {data,error ,isError,isLoading,refetch,isSuccess}=useQuery({
+
+  const {data,error ,isError,isLoading,}=useQuery({
         queryKey:['allBLog'],
         queryFn: allBlog
   }, )
+      
      if(isLoading){
         return <Skeleton count={15} />
      }
+    
      if(isError){
       return console.log(error)
      }
-    
-
+      
+  
          const handleFilter=()=>{
           const info=categoryRef.current.value
             axiosNormal.get(`/allBlog?value=${info}`,)

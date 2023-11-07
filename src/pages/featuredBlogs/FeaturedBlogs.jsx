@@ -10,11 +10,10 @@ const FeaturedBlogs = () => {
         const res= await axiosNormal.get('/topBlog')
           return res
         }
-        const {data:topBlogs,error ,isError,isLoading}=useQuery({
+        const {data:topBlogs,error ,isError,isLoading,isPending}=useQuery({
             queryKey:['recent'],
             queryFn: featuredBlogs
       })
-        console.log(topBlogs)
          if(isLoading){
             return <Skeleton count={5} />
          }
@@ -22,9 +21,6 @@ const FeaturedBlogs = () => {
           return console.log(error)
          }
 
-         
-
-        console.log(topBlogs.data)
 
     return (
     <div className="  container mx-auto">
@@ -42,11 +38,9 @@ const FeaturedBlogs = () => {
               <th className="text-base">Name</th>
               <th className="text-base">Title</th>
               <th className="text-base">Category</th>
-            
             </tr>
           </thead>
           <tbody>
-            {/* row 1 */}
               {
                 topBlogs?.data?.map((item,indx)=>{
                    return  <tr key={indx}>
@@ -68,11 +62,8 @@ const FeaturedBlogs = () => {
                      {item.title}
                     </td>
                     <td>{item.category}</td>
-                   
                   </tr>
                 })
-                     
-               
               }
           </tbody>
         </table>

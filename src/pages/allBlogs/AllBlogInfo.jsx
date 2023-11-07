@@ -11,9 +11,7 @@ const AllBlogInfo = ({allBLogsInfo}) => {
 
     return (
         <div className='mt-5 max-w-[400px] h-[510px] border bg-gray-100 '>
-            
             <div>
-              
               <PhotoProvider >
                 <PhotoView src={url}>
                  <img src={url} alt="" />
