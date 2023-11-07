@@ -66,8 +66,6 @@ const handleComment=()=>{
                  <img className="md:w-[640px] md:h-[427px]" src={url} alt="" />
              </div>
              <div className="flex-1 ">
-                 {/* asi ra */}
-           
                <div>
                   <div className="flex items-center  mb-2 gap-5">
                   <h1 className="text-xl font-medium">{title}</h1>

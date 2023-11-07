@@ -38,8 +38,6 @@ const SingleWish = ({wish,refetch}) => {
             }
           });
       }
-
-    console.log(wish)
     return (
         <div className=' md:p-2 p-4'>
              <div className='md:mt-6 mt-8 border bg-gray-100 '>

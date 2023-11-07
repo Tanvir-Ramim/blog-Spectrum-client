@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 const BlogImportant = () => {
 
     return (
-        < div className="grid lg:grid-cols-2 items-center  lg:mt-20 md:mt-14 mt-8    max-w-[1350px] md:p-0 p-3   m-auto ">
+        < div className="grid lg:grid-cols-2 items-center  lg:mt-24 md:mt-16 mt-10    max-w-[1350px] md:p-0 p-3   m-auto ">
         <motion.div  animate={{
         scale: [1, 2, 2, 1, 1],
         rotate: [0, 0, 180, 180, 0],

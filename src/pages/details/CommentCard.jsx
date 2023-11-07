@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 const CommentCard = ({item}) => {
     const {comment,
     logUserPhoto,logUser}=item ||{}
-    console.log(item)
     return (
         <div className="border border-t-0 p-2 mb-5 ">
              <div className="flex gap-4 " >
@@ -19,6 +18,6 @@ const CommentCard = ({item}) => {
     );
 };
 CommentCard.propTypes={
-    item:PropTypes.string
+    item:PropTypes.object
 }
 export default CommentCard;

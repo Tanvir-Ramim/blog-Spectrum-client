@@ -1,5 +1,4 @@
 import React from 'react';
-
 const BLogCommunity = () => {
     return (
         <div className='flex md:flex-row flex-col mt-8 lg:p-0  p-3 mb-5 gap-8 max-w-[1400px] m-auto'>
