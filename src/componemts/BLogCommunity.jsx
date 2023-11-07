@@ -1,10 +1,10 @@
 import React from 'react';
 const BLogCommunity = () => {
     return (
-        <div className='flex md:flex-row flex-col mt-8 lg:p-0  p-3 mb-5 gap-8 max-w-[1400px] m-auto'>
+        <div className='flex md:flex-row flex-col mt-8 lg:p-0  p-3 lg:mb-12 md:mb-8 mb-7 gap-8 max-w-[1400px] m-auto'>
              <div className='md:w-3/4'>
              <div className="collapse collapse-plus bg-base-200 mb-2">
-  <input type="radio" name="my-accordion-3" checked="checked" /> 
+  <input type="radio" name="my-accordion-3" defaultChecked/> 
   <div className="collapse-title text-xl font-medium">
   Information Sharing
   </div>
@@ -12,7 +12,7 @@ const BLogCommunity = () => {
     <p>Blogs are a powerful platform for sharing information, knowledge, and ideas on a wide range of topics. They can serve as valuable educational resources, helping people learn about new subjects, stay updated on current events, or gain insights into niche interests.</p>
   </div>
 </div>
-<div className="collapse collapse-plus bg-base-200 mb-2">
+<div className="collapse collapse-plus md:mt-0 mt-3 bg-base-200 mb-2">
   <input type="radio" name="my-accordion-3" /> 
   <div className="collapse-title text-xl font-medium">
   Engagement and Community Building

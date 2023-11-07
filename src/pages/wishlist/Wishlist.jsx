@@ -28,10 +28,9 @@ const Wishlist = () => {
      if(isError){
       return console.log(error)
      }
-
     return (
         <div >
-            <div className="h-[60vh]">
+            <div className="min-h-[60vh] mb-5">
                 <h1 className="text-3xl font-semibold text-center md:mt-10 mt-5 mb-1 ">Your WishList ({wishData.data.length})</h1>
                 <hr />
                 <div className="max-w-[1500px] m-auto">

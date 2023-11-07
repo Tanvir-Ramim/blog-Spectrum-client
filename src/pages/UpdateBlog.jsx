@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import useAxiosNormal from "../hooks/useAxiosNormal";
 import { useQuery } from "@tanstack/react-query";
 import Skeleton from "react-loading-skeleton";
@@ -8,6 +8,7 @@ import toast from "react-hot-toast";
 const UpdateBlog =  () => {
     const {id}=useParams()
     const axiosN=useAxiosNormal()
+    const navigate=useNavigate()
     const updateFun= async()=>{
        const res = await axiosN.get(`/details/${id}`)
           return res
@@ -25,8 +26,7 @@ const UpdateBlog =  () => {
    if(OldInfo.data.error){
      return <ErrorPage></ErrorPage>
    }
-     console.log(OldInfo)
-     const { _id, title, category, url, shortDescription,longDescription}=OldInfo.data ||{}
+     const {  title, category, url, shortDescription,longDescription}=OldInfo.data ||{}
      
       const handleUpdate=(e)=>{
         e.preventDefault()
@@ -42,6 +42,7 @@ const UpdateBlog =  () => {
             if(res.data.matchedCount){
                 refetch()
                 toast.success('SuccessFully Updated')
+                navigate(-1)
             }
         })
         

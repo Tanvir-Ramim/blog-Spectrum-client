@@ -17,7 +17,6 @@ const ReComment = ({blogDetails,isExits}) => {
 
     const { _id, title, category, url, shortDescription, currentTime,longDescription
     }=blogDetails||{}
-console.log(blogDetails)
 
 const getComment=async()=>{
      const res=await axiosNormal.get(`/comment?oldId=${_id}`)
