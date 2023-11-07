@@ -32,7 +32,7 @@ const Register = () => {
                   photoURL: url
                })
                .then(result=>{
-                   setUser({...user,photoURL:url,displayName:name})
+                   setUser({...user,photoURL:url,displayName:name,email:email})
                
                })
                navigate('/')

@@ -42,10 +42,11 @@ const AuthProvider = ({children}) => {
 
     useEffect(()=>{
         const unSubscriber= onAuthStateChanged(auth,currentUser=>{
-            setUser(currentUser)
-            console.log(currentUser)
             const userEmail=currentUser?.email||user?.email
             const loggedUser={email:userEmail}
+            setUser(currentUser)
+            console.log(currentUser)
+            
             setLoader(false)
 
             if(currentUser){
@@ -63,7 +64,7 @@ const AuthProvider = ({children}) => {
             }
       })
       return()=>{
-         unSubscriber
+         return unSubscriber ()
       }
     },[])
 

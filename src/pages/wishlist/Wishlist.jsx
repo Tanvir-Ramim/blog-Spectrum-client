@@ -5,11 +5,14 @@ import useSecureAxios from "../../hooks/useSecureAxios";
 import { useContext } from "react";
 import { AuthContext } from "../../authentication/AuthProvider";
 import SingleWish from "./SingleWish";
+import { useLocation } from "react-router-dom";
 
 
 const Wishlist = () => {
        const axiosSecure=useSecureAxios()
        const {user}=useContext(AuthContext)
+       console.log(user)
+      
      const wishListFun=async()=>{
         const res=await  axiosSecure.get(`/wishList?email=${user?.email}`)
           return res
@@ -24,7 +27,6 @@ const Wishlist = () => {
         return <Skeleton count={15} />
      }
    
-    
      if(isError){
       return console.log(error)
      }

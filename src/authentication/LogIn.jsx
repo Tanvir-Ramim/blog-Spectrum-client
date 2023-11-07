@@ -5,7 +5,7 @@ import toast from "react-hot-toast";
 
 
 const LogIn = () => {
-  const{userLogIn,googleLogIn}=useContext(AuthContext)
+  const{userLogIn,googleLogIn,setUser,user}=useContext(AuthContext)
   const [error, setError] = useState(null)
   const navigate=useNavigate()
   const location=useLocation()

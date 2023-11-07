@@ -2,9 +2,11 @@ import PropTypes from 'prop-types';
 import {  NavLink } from 'react-router-dom';
 import AuthButton from './AuthButton';
 import Footer from '../componemts/recentAdd/Footer';
+import { useContext } from 'react';
+import { AuthContext } from '../authentication/AuthProvider';
 
 const LayOut = ({children}) => {
-     
+     const{user}=useContext(AuthContext)
     const navLink=<>
      <NavLink to='/' className={({ isActive }) =>
      isActive ? "text-xl font-semibold bg-[#11192BA8] text-white p-1" : "text-xl font-semibold p-1"
@@ -15,9 +17,11 @@ const LayOut = ({children}) => {
      <NavLink to='/featuredBlogs' className={({ isActive }) =>
      isActive ? "text-xl font-semibold bg-[#11192BA8] text-white p-1" : "text-xl font-semibold p-1"
   }  >FeaturedBlogs</NavLink> 
-     <NavLink to='/wishList' className={({ isActive }) =>
-     isActive ? "text-xl font-semibold bg-[#11192BA8] text-white p-1" : "text-xl font-semibold p-1"
-  }  >WishList</NavLink> 
+     {
+      user && <NavLink to='/wishList' className={({ isActive }) =>
+      isActive ? "text-xl font-semibold bg-[#11192BA8] text-white p-1" : "text-xl font-semibold p-1"
+   }  >WishList</NavLink> 
+     }
      <NavLink to='/addBlog' className={({ isActive }) =>
      isActive ? "text-xl font-semibold bg-[#11192BA8] text-white p-1" : "text-xl font-semibold p-1"
   }  >AddBlog</NavLink> 
