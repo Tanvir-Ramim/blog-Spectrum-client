@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import {  NavLink } from 'react-router-dom';
 import AuthButton from './AuthButton';
+import Footer from '../componemts/recentAdd/Footer';
 
 const LayOut = ({children}) => {
      
@@ -23,9 +24,10 @@ const LayOut = ({children}) => {
     </>
 
     return (
-        <div className="drawer max-w-[1800px] m-auto">
+        <div>
+          <div className="drawer max-w-[1800px] m-auto">
   <input id="my-drawer-3" type="checkbox" className="drawer-toggle" /> 
-  <div className="drawer-content flex flex-col">
+  <div className="drawer-content flex flex-col ">
     {/* Navbar */}
     <div className="w-full navbar py-10 md:flex-row flex flex-col ">
      <div className='flex-1'>
@@ -55,6 +57,7 @@ const LayOut = ({children}) => {
      {
          children
      }
+     
   </div> 
   <div className="drawer-side ">
     <label htmlFor="my-drawer-3" aria-label="close sidebar" className="drawer-overlay"></label> 
@@ -64,6 +67,10 @@ const LayOut = ({children}) => {
     </ul>
   </div>
 </div>
+      <div>
+        <Footer></Footer>
+      </div>
+        </div>
     );
 };
 

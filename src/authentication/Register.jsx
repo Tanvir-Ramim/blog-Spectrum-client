@@ -7,7 +7,7 @@ import { updateProfile } from "firebase/auth";
 
 
 const Register = () => {
-    const{createUser}=useContext(AuthContext)
+    const{createUser,setUser,user}=useContext(AuthContext)
         const [error,setError]=useState(null)
         const navigate=useNavigate()
        const handleRegister=(e)=>{
@@ -31,6 +31,10 @@ const Register = () => {
                   displayName: name,
                   photoURL: url
                })
+               .then(result=>{
+                   setUser({...user,photoURL:url,displayName:name})
+               
+               })
                navigate('/')
           })
           .catch(error=>{
@@ -40,7 +44,7 @@ const Register = () => {
        }
     return (
         <div>
-        <div className="hero min-h-screen bg-base-200">
+        <div className="hero min-h-screen bg-base-200 mb-5">
 <div className="hero-content flex-col lg:flex-row-reverse">
 <div className="text-center lg:text-left">
   <h1 className="text-5xl font-bold text-[#11192BA8]"> Register Now</h1>

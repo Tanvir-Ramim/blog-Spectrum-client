@@ -48,7 +48,7 @@ const UpdateBlog =  () => {
       }
      
     return (
-        <div className="max-w-[1000px] m-auto">
+        <div className="max-w-[1000px] mb-5 m-auto">
               <div className="bg-[#11192BA8] py-20  p-1 md:p-24  max-w-[1800px] m-auto rounded-xl">
         <h2 className="text-3xl font-extrabold text-center md:mb-16 mb-8 mt-5 md:mt-10">Add Blog</h2>
         <form  onSubmit={handleUpdate}  >

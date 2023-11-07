@@ -52,7 +52,7 @@ const AllBlogs = () => {
        }
      return (
         
-        <div className="md:mt-16 mt-8 max-w-[1600px] m-auto ">
+        <div className="md:mt-16 md:mb-5 mb-4   mt-8 max-w-[1600px] m-auto ">
             <div>
             <h1 className="text-3xl text-center font-semibold">All BLog Collection</h1>
         <hr className="mt-2"/>

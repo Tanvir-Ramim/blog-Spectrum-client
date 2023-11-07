@@ -36,7 +36,7 @@ const AddBlog = () => {
 
     }
     return (
-        <div className="bg-[#11192BA8] py-20  p-1 md:p-24  max-w-[1800px] m-auto rounded-xl">
+        <div className="bg-[#11192BA8] py-20 mb-5  p-1 md:p-24  max-w-[1800px] m-auto rounded-xl">
         <h2 className="text-3xl font-extrabold text-center md:mb-16 mb-8 mt-5 md:mt-10">Add Blog</h2>
         <form  onSubmit={handleAddBlog} >
             <div className="md:flex md:mb-5">
@@ -45,7 +45,7 @@ const AddBlog = () => {
                         <span className="label-text text-xl text-white">Title</span>
                     </label>
                     <label className="input-group  ">
-                        <input type="text" name="title" placeholder="Title" className="input w-[400px] h-16  input-bordered  text-lg " />
+                        <input type="text" name="title" placeholder="Title" className="input w-[400px] h-16  input-bordered  text-lg "required/>
                     </label>
                 </div>
                 
@@ -68,7 +68,7 @@ const AddBlog = () => {
                         <span className="label-text text-xl text-white ">Short Description</span>
                     </label>
                     <label className="input-group">
-                        <input type="text" name="shortDescription" placeholder="text...." className="input input-bordered  w-[400px] h-16 text-lg  " />
+                        <input type="text" name="shortDescription" placeholder="text...." className="input input-bordered  w-[400px] h-16 text-lg  " required/>
                     </label>
                 </div>
                 <div className="form-control md:w-1/2 md:ml-4">
@@ -76,7 +76,7 @@ const AddBlog = () => {
                         <span className="label-text text-xl text-white">Photo URL</span>
                     </label>
                     <label className="input-group">
-                        <input type="text" name="photo" placeholder="Photo URL" className="input input-bordered w-[400px] h-16 text-lg" />
+                        <input type="text" name="photo" placeholder="Photo URL" className="input input-bordered w-[400px] h-16 text-lg"required />
                     </label>
                 </div>
             </div>
@@ -86,7 +86,7 @@ const AddBlog = () => {
                         <span className="label-text  text-xl text-white">Long Description</span>
                     </label>
                     <label className="input-group">
-                        <textarea className="w-full text-lg" name="longDescription" id="" cols="" rows="7"></textarea>
+                        <textarea className="w-full text-lg" name="longDescription" id="" cols="" rows="7" required></textarea>
                     </label>
                 </div>
             </div>

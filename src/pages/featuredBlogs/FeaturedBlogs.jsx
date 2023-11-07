@@ -10,7 +10,7 @@ const FeaturedBlogs = () => {
         const res= await axiosNormal.get('/topBlog')
           return res
         }
-        const {data:topBlogs,error ,isError,isLoading,isPending}=useQuery({
+        const {data:topBlogs,error ,isError,isLoading}=useQuery({
             queryKey:['recent'],
             queryFn: featuredBlogs
       })
@@ -23,10 +23,10 @@ const FeaturedBlogs = () => {
 
 
     return (
-    <div className="  container mx-auto">
+    <div className=" h-[70vh] container mx-auto">
          <div>
          <div className="">
-            <h1 className="text-3xl md:ml-0 ml-2 font-semibold  mt-5">Top Featured Blog </h1>
+            <h1 className="text-3xl md:ml-0 ml-2 font-semibold  mt-5">Top 5 Featured Blog  </h1>
             <hr  className="mb-8  md:ml-0 ml-2  mt-1 w-64" />
           </div>
             <div className="overflow-x-auto ">

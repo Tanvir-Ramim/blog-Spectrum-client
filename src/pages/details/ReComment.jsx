@@ -102,7 +102,6 @@ const handleComment=()=>{
                     data?.data?.map(item=><CommentCard key={item._id} item={item}></CommentCard>)
                  }
             </div>
-                 {/* <Comment id={_id}></Comment> */}
              </div>
          </div>
         </div>
