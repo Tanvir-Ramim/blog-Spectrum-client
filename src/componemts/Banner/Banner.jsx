@@ -4,7 +4,7 @@ import './Banner.css'
 const Banner = () => {
     return (
         <div className='p-3'>
-            <div className='relative   max-w-[1800px] m-auto '>
+            <div className='relative   max-w-[1700px] m-auto '>
         <div className='banner-main'>
           <div className='z-[1]'>
           <h1 className='lg:text-5xl  md:text-3xl text-xl font-bold text-white'>Welcome to our blog, your gateway to a world of <br /> </h1>
