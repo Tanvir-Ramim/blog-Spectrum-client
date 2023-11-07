@@ -3,10 +3,28 @@ import { Link } from 'react-router-dom';
 import { MdBookmarkAdd } from 'react-icons/md';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
 import 'react-photo-view/dist/react-photo-view.css';
+import useAxiosNormal from '../../hooks/useAxiosNormal';
+import toast from 'react-hot-toast';
 const AllBlogInfo = ({allBLogsInfo}) => {
-
+    const axiosNormal=useAxiosNormal()
     const { _id, title, category, url, shortDescription, UserPhoto, currentTime } = allBLogsInfo || {}
-
+    
+    const handleWish=()=>{
+       
+          const listInfo={
+             title,shortDescription,category,url
+          }
+         
+          axiosNormal.post('/wishlist',listInfo)
+          .then(res=>{
+             if(res.data.acknowledged){
+                 toast.success('Successfully Add wishlist')
+             }
+             else if(res.data.error==3){
+                  toast.error('Already Add Wishlist')
+             }
+          })
+    }
 
 
     return (
@@ -25,8 +43,8 @@ const AllBlogInfo = ({allBLogsInfo}) => {
             </div>
             <div className='mt-4 px-2  flex  items-center gap-3'>
                 <img className='w-10 h-10 rounded-full' src={UserPhoto} alt="" />
-                <h1 className='font-bold text-lg'>{currentTime.slice(0, 10)}</h1>
-                <h1 className='flex w-1/2  justify-end cursor-pointer    hover:'><MdBookmarkAdd className='text-3xl'></MdBookmarkAdd></h1>
+                <h1 className='font-bold text-lg'>{currentTime?.slice(0, 10)}</h1>
+                <h1 className='flex w-1/2  justify-end cursor-pointer    hover:'><button onClick={handleWish}><MdBookmarkAdd className='text-3xl'></MdBookmarkAdd></button></h1>
             </div>
         </div>
     );

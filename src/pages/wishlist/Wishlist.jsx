@@ -1,6 +1,10 @@
+import { useContext } from "react";
 
 
 const Wishlist = () => {
+
+     
+
     return (
         <div>
             wishList
