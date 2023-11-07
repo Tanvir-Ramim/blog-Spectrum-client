@@ -5,14 +5,18 @@ import { PhotoProvider, PhotoView } from 'react-photo-view';
 import 'react-photo-view/dist/react-photo-view.css';
 import useAxiosNormal from '../../hooks/useAxiosNormal';
 import toast from 'react-hot-toast';
+import { useContext } from 'react';
+import { AuthContext } from '../../authentication/AuthProvider';
 const AllBlogInfo = ({allBLogsInfo}) => {
     const axiosNormal=useAxiosNormal()
     const { _id, title, category, url, shortDescription, UserPhoto, currentTime } = allBLogsInfo || {}
+    const {user}=useContext(AuthContext)
     
     const handleWish=()=>{
-       
+        const oldId= _id
+            const email=user?.email
           const listInfo={
-             title,shortDescription,category,url
+             title,shortDescription,category,url,email,oldId
           }
          
           axiosNormal.post('/wishlist',listInfo)

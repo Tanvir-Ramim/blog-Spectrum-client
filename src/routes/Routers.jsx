@@ -12,7 +12,6 @@ import ErrorPage from "../componemts/ErrorPage";
 import UpdateBlog from "../pages/UpdateBlog";
 import PrivateRoute from "./PrivateRoute";
 
-
 const Routers = createBrowserRouter([
     {
       path: "/",
@@ -33,7 +32,7 @@ const Routers = createBrowserRouter([
         },
         {
             path: 'wishList',
-            element:<Wishlist></Wishlist>
+            element:<PrivateRoute><Wishlist></Wishlist></PrivateRoute>
         },
         {
              path: 'addBlog',

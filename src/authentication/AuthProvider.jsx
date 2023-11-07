@@ -58,9 +58,9 @@ const AuthProvider = ({children}) => {
                 axiosNormal.post('/jwtRemove',loggedUser,{
                     withCredentials:true
                 })
-                .then(res=>{
-                      console.log(res.data)
-                })
+                // .then(res=>{
+                //       console.log(res.data)
+                // })
             }
       })
       return()=>{
