@@ -1,5 +1,5 @@
  # Project Name: Blog Spectrum
- ## link: https://gariber-gadget.web.app
+ ## link: https://iridescent-tapioca-8a5614.netlify.app
 
 ## Below are the  project features
 
