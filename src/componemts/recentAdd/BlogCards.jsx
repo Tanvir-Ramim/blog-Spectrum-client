@@ -33,7 +33,7 @@ const BlogCards = ({ blogInfo }) => {
             <div className=''>
               <PhotoProvider >
                 <PhotoView src={url}>
-                 <img src={url} alt="" />
+                 <img className='h-[266px] w-full' src={url} alt="" />
                 </PhotoView>
               </PhotoProvider>
                 <div className='px-2'>

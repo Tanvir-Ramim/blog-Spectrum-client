@@ -45,7 +45,7 @@ const SingleWish = ({wish,refetch}) => {
               <div>
               <PhotoProvider >
                 <PhotoView src={url}>
-                 <img className='md:max-h-60 md:max-w-xs' src={url} alt="" />
+                 <img className='md:w-[320px] w-[420px] h-[260px] md:h-[210px]' src={url} alt="" />
                 </PhotoView>
               </PhotoProvider>
               </div>
@@ -53,7 +53,7 @@ const SingleWish = ({wish,refetch}) => {
                     <h3 className='mt-4 text-xl font-semibold'>{title}</h3>
                     <p className='mt-2 text-lg font-normal'>Description:    {shortDescription}</p>
                     <h4 className='mt-2 text-lg font-normal'><span className='font-semibold'>Category</span> : {category}</h4>
-                    <button className='mt-3 '><Link to={`/details/${oldId}`} className='underline  text-lg font-medium'>Go Details</Link></button>
+                    <button className='mt-3 mb-3 md:mb-0'><Link to={`/details/${oldId}`} className='underline  text-lg font-medium'>Go Details</Link></button>
                 </div>
             </div>
             <div className=' flex items-center '>

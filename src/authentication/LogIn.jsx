@@ -5,7 +5,7 @@ import toast from "react-hot-toast";
 
 
 const LogIn = () => {
-  const{userLogIn,googleLogIn,setUser,user}=useContext(AuthContext)
+  const{userLogIn,googleLogIn}=useContext(AuthContext)
   const [error, setError] = useState(null)
   const navigate=useNavigate()
   const location=useLocation()
@@ -39,7 +39,7 @@ const LogIn = () => {
             <div className="text-center lg:text-left">
               <h1 className="text-5xl font-bold text-[#11192BA8]">Login now!</h1>
             </div>
-            <div className="card flex-shrink-0 w-full min-w-[440px] max-w-md shadow-2xl bg-base-100">
+            <div className="card flex-shrink-0 w-full md:min-w-[440px] max-w-md shadow-2xl bg-base-100">
               <form onSubmit={handleLogIn} className="card-body bg-[#11192BA8]">
                 <div className="form-control">
                   <label className="label">

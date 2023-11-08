@@ -80,7 +80,7 @@ const handleComment=()=>{
                      {
                          isExits ? <div>
                              <h1 className="text-2xl text-red-700">You can not comment Here</h1>
-                           <button className="rounded-lg text-blue-400  p-2 mt-4 border "><Link to={`/update/${_id}`}>Update Blog</Link> </button>
+                           <button className="rounded-lg  text-blue-400  p-2 mt-4 border "><Link to={`/update/${_id}`}>Update Blog</Link> </button>
                          </div> :  <div className="flex">
                          <input ref={commentRef} className="w-4/5 md:h-20 h-12 border  border-r-0  border-black" type="text" />
                          <button onClick={handleComment} className="bg-[#11192BA8] text-white md:h-[80px] p-3  ">Submit</button>

@@ -23,7 +23,7 @@ const FeaturedBlogs = () => {
 
 
     return (
-    <div className=" h-[70vh] container mx-auto">
+    <div className=" min-h-[70vh] container mx-auto">
          <div>
          <div className="">
             <h1 className="text-3xl md:ml-0 ml-2 font-semibold  mt-5">Top 5 Featured Blog  </h1>
