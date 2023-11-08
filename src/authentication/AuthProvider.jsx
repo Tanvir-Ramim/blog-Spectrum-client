@@ -15,7 +15,6 @@ const googleProvider=new GoogleAuthProvider()
 export const AuthContext=createContext(null)
 
 const AuthProvider = ({children}) => {
-    //  const axiosSecure=useSecureAxios()
       const axiosNormal=useAxiosNormal()
      const [user,setUser]= useState(null)
      const [loader,setLoader]=useState(true)
@@ -45,7 +44,6 @@ const AuthProvider = ({children}) => {
             const userEmail=currentUser?.email||user?.email
             const loggedUser={email:userEmail}
             setUser(currentUser)
-            console.log(currentUser)
             
             setLoader(false)
 
@@ -58,9 +56,6 @@ const AuthProvider = ({children}) => {
                 axiosNormal.post('/jwtRemove',loggedUser,{
                     withCredentials:true
                 })
-                // .then(res=>{
-                //       console.log(res.data)
-                // })
             }
       })
       return()=>{
