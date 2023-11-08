@@ -1,11 +1,12 @@
-import axios from "axios";
 import { useContext } from "react";
 import { AuthContext } from "../../authentication/AuthProvider";
 import toast from "react-hot-toast";
+import useAxiosNormal from "../../hooks/useAxiosNormal";
 
 
 const AddBlog = () => {
     const {user}=useContext(AuthContext)
+    const axiosNormal=useAxiosNormal()
     const handleAddBlog=(e)=>{
           e.preventDefault()
           const form= e.target 
@@ -22,7 +23,7 @@ const AddBlog = () => {
           }
           
       
-          axios.post('http://localhost:5000/addBlog',postInfo)
+          axiosNormal.post('/addBlog',postInfo)
           .then(res=>{
                if(res.data.acknowledged){
                  toast.success('Successfully Post')
