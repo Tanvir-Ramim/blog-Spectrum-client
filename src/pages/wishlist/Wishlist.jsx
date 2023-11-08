@@ -5,7 +5,7 @@ import useSecureAxios from "../../hooks/useSecureAxios";
 import { useContext } from "react";
 import { AuthContext } from "../../authentication/AuthProvider";
 import SingleWish from "./SingleWish";
-import { useLocation } from "react-router-dom";
+
 
 
 const Wishlist = () => {
