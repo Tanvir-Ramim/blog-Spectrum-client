@@ -52,7 +52,7 @@ const Routers = createBrowserRouter([
         },
         {
            path:'update/:id',
-           element:<UpdateBlog></UpdateBlog>
+           element:<PrivateRoute><UpdateBlog></UpdateBlog></PrivateRoute>
         }
       ]
     },
