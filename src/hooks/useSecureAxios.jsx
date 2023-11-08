@@ -5,7 +5,7 @@ import axios from 'axios';
 import { AuthContext } from '../authentication/AuthProvider';
 
 const axiosSecure = axios.create({
-    baseURL: 'https://blog-spectrum-server-6enytn5ke-tanvir-ramim-831d6510.vercel.app',
+    baseURL: 'http://localhost:5000',
     withCredentials: true
 });
 const useSecureAxios = () => {

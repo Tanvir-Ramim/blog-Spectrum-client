@@ -11,7 +11,6 @@ import SingleWish from "./SingleWish";
 const Wishlist = () => {
        const axiosSecure=useSecureAxios()
        const {user}=useContext(AuthContext)
-       console.log(user)
       
      const wishListFun=async()=>{
         const res=await  axiosSecure.get(`/wishList?email=${user?.email}`)
